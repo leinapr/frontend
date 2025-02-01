@@ -100,6 +100,16 @@
             :readonly="this.isNotPermitted(PERMISSIONS.PORTFOLIO_MANAGEMENT)"
           />
           <b-input-group-form-input
+            id="component-productId-input"
+            input-group-size="mb-3"
+            type="text"
+            v-model="component.productId"
+            required="false"
+            :label="$t('message.productid')"
+            :tooltip="$t('message.component_productid_desc')"
+            :readonly="this.isNotPermitted(PERMISSIONS.PORTFOLIO_MANAGEMENT)"
+          />
+          <b-input-group-form-input
             id="component-uuid"
             input-group-size="mb-3"
             type="text"
@@ -558,6 +568,7 @@ export default {
           purl: this.component.purl,
           cpe: this.component.cpe,
           swidTagId: this.component.swidTagId,
+          productId: this.component.productId,
           copyright: this.component.copyright,
           md5: this.component.md5,
           sha1: this.component.sha1,

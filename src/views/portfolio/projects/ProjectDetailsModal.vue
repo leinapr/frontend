@@ -243,6 +243,16 @@
             :tooltip="$t('message.component_swid_tagid_desc')"
             :readonly="this.isNotPermitted(PERMISSIONS.PORTFOLIO_MANAGEMENT)"
           />
+          <b-input-group-form-input
+            id="project-productId-input"
+            input-group-size="mb-3"
+            type="text"
+            v-model="project.productId"
+            required="false"
+            :label="$t('message.productid')"
+            :tooltip="$t('message.component_productid_desc')"
+            :readonly="this.isNotPermitted(PERMISSIONS.PORTFOLIO_MANAGEMENT)"
+          />
         </b-card>
       </b-tab>
       <b-tab
@@ -724,6 +734,7 @@ export default {
           cpe: this.project.cpe,
           purl: this.project.purl,
           swidTagId: this.project.swidTagId,
+          productId: this.project.productId,
           tags: tagsNode,
           active: this.project.active,
           isLatest: this.project.isLatest,

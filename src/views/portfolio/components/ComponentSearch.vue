@@ -144,6 +144,9 @@ export default {
       } else if (this.subject === 'SWID_TAGID') {
         let v = common.trimToNull(this.value);
         return v != null ? 'swidTagId=' + encodeURIComponent(v) : '';
+      } else if (this.subject === 'PRODUCTID') {
+        let v = common.trimToNull(this.value);
+        return v != null ? 'productId=' + encodeURIComponent(v) : '';
       }
     },
     performSearch: function () {
@@ -212,6 +215,7 @@ export default {
         { value: 'PACKAGE_URL', text: this.$t('message.package_url') },
         { value: 'CPE', text: this.$t('message.cpe_full') },
         { value: 'SWID_TAGID', text: this.$t('message.swid_tagid') },
+        { value: 'PRODUCTID', text: this.$t('message.productid') },
         { value: 'HASH', text: this.$t('message.hashes_short_desc') },
       ],
       changeSearchUrl: false,
@@ -280,6 +284,14 @@ export default {
         {
           title: this.$t('message.swid_tagid'),
           field: 'swidTagId',
+          sortable: true,
+          formatter(value, row, index) {
+            return xssFilters.inHTMLData(common.valueWithDefault(value, ''));
+          },
+        },
+        {
+          title: this.$t('message.productid'),
+          field: 'productId',
           sortable: true,
           formatter(value, row, index) {
             return xssFilters.inHTMLData(common.valueWithDefault(value, ''));

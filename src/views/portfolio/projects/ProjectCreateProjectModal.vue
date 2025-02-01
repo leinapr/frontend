@@ -210,6 +210,15 @@
             :label="$t('message.swid_tagid')"
             :tooltip="$t('message.component_swid_tagid_desc')"
           />
+          <b-input-group-form-input
+            id="project-productId-input"
+            input-group-size="mb-3"
+            type="text"
+            v-model="project.productId"
+            required="false"
+            :label="$t('message.productid')"
+            :tooltip="$t('message.component_productid_desc')"
+          />
         </b-card>
       </b-tab>
       <!--
@@ -386,6 +395,7 @@ export default {
           purl: this.project.purl,
           cpe: this.project.cpe,
           swidTagId: this.project.swidTagId,
+          productId: this.project.productId,
           copyright: this.project.copyright,
           tags: tagsNode,
           active: true,
